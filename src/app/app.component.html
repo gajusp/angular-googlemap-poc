@@ -1,0 +1,52 @@
+<!-- The content below is only a placeholder and can be replaced. -->
+<div style="text-align:center">
+  <h1>Welcome to Google Maps Demo ...</h1>
+  <div>
+    <div>
+      <label> From : <input type="text" [(ngModel)]="fromSource" /> </label>
+      <label> To : <input type="text" [(ngModel)]="toDestination" /> </label>
+      <button (click)="onShowRoute()" style="margin-left: 10px;">Submit</button>
+      <button (click)="onShowRoute(true)" style="margin-left: 10px;">
+        Reverse
+      </button>
+    </div>
+    <br /><br />
+    <div>
+      <b>Mode of Travel: </b>
+      <select id="mode" (change)="onTravelChange($event)">
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+        <option value="BICYCLING">Bicycling</option>
+        <option value="TRANSIT">Transit</option>
+      </select>
+      <b>Mode of TrafficModel : </b>
+      <select id="trafficModel" (change)="onTrafficChange($event)">
+        <option value="bestguess">Bestguess</option>
+        <option value="pessimistic">Pessimistic</option>
+        <option value="optimistic">Optimistic</option>
+      </select>
+      <br>
+      <b>Route options : </b>
+      <label>
+        Avoid motorways : <input #avoidMtr type="checkbox" [(ngModel)]="avoidMotoways" (ngModelChange)="onChangeAvoidMotorways($event)"/>
+      </label>
+      <label>
+        Avoid tolls/congestion charging :
+        <input #avoidtoll type="checkbox" [(ngModel)]="avoidTolls" (ngModelChange)="onChangeAvoidTolls($event)"/>
+      </label>
+    </div>
+  </div>
+</div>
+<h2>Google Map Navigation :</h2>
+<!-- <div #googleMap style="width:96%;height:500px"></div> -->
+<div class="map-container">
+  <aa-google-map
+    [origin]="origin"
+    [destination]="destination"
+    [defaultPos]="defaultPos"
+    [travelMode]="travelMode"
+    [drivingOptions]="drivingOptions"
+    [avoidHighways]="avoidMotoways"
+    [avoidTolls]="avoidTolls"
+  ></aa-google-map>
+</div>

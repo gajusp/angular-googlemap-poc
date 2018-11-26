@@ -1,0 +1,17 @@
+.context_menu {
+  display: none;
+  position: absolute;
+  background-color: #f2eee3;
+  padding: 0;
+  border: #6c6753 1px solid;
+}
+.context_menu_item {
+  padding: 5px;
+}
+.context_menu_item:hover {
+  background-color: #d2cdb8;
+}
+.context_menu_separator {
+  height: 1px;
+  background-color: #6c6753;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GoogleMapDemo</title>
+    <base href="/" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      /**
+       * Dispatch the event of map script loaded
+       **/
+      function initMap() {
+        console.log(" === Google Map Script loaded in App === ");
+        setTimeout(() => {
+          window.postMessage({ action: "mapScriptLoaded" }, "*");
+        }, 1000);
+      }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCE6ZRCHBfJywvCzZ7FPP4cs5RgGjJfOI0&callback=initMap"></script>
+    <!--
+      ?key='AIzaSyAfXSRDGNgvEjky6PUSTaSK1pDib6UmtOg'
+      client=''
+    -->
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+</html>
